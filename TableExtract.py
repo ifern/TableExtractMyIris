@@ -1,13 +1,14 @@
 import io
 import re
+import sys
 
 row_open = 0
 table_open = 0
 outvalue = ''
 first_time = 1
 
-f = open("myiris.html","r")
-of = open("output.txt","a")
+f = open(sys.argv[1],"r")
+of = open(sys.argv[2],"a")
 
 for line in f:
        if (re.search("<table.*",line) and table_open ==0):
